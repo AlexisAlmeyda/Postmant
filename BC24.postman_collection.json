@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "4e40eecf-4aa0-43bc-b480-6ed07f75ddae",
+		"name": "ProyectoMicroservicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PersonalClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Hugo\",\r\n    \"lastName\": \"Torres\",\r\n    \"documentType\": \"DNI\",\r\n    \"documentNumber\": \"98768751\",\r\n    \"email\": \"hugo@gmail.com\",\r\n    \"address\": \"Miraflores\",\r\n    \"phone\": \"987564312\",\r\n    \"vip\": true   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/client/personal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"client",
+						"personal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActiveProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"creditCardNumber\" : \"3456765432123456\",\r\n    \"status\": \"1\",\r\n    \"expirationDate\" : \"2023-09-30\",\r\n    \"idClient\" : \"62d7919ccdba557553642f95\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/active",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PassiveProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"typeAccount\" : \"Cuenta Corriente\",\r\n    \"accountNumber\" : \"1234567890123\",\r\n    \"status\": \"5\",\r\n    \"amount\": 0,\r\n    \"idClient\" : \"62cf372367c779398d85c0dd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8003/api/passive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"passive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientActiveProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/client/personal/clientActives/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"client",
+						"personal",
+						"clientActives",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientPassiveProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/client/personal/clientPassives/sadasdad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"client",
+						"personal",
+						"clientPassives",
+						"sadasdad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EnterpriseClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"PYJ\",\r\n    \"documentType\": \"2\",\r\n    \"ruc\": \"205500324\",\r\n    \"email\": \"ventas@pyj.com.pe\",\r\n    \"address\": \"Gamarra\",\r\n    \"phone\": \"978529826\",\r\n    \"pyme\": true   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/client/enterprise",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"client",
+						"enterprise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\" : 1500.00,\r\n    \"documentType\" : \"DNI\",\r\n    \"documentNumber\": \"47449216\",\r\n    \"transactionType\" : \"CCI\",\r\n    \"comission\" : 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8004/api/transaction/client/71440590",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"api",
+						"transaction",
+						"client",
+						"71440590"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EnterpriseActiveProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/client/enterprise/enterpriseActives/62cf372367c779398d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"client",
+						"enterprise",
+						"enterpriseActives",
+						"62cf372367c779398d8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EnterprisePassiveProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/client/enterprise/enterprisePassives/09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"client",
+						"enterprise",
+						"enterprisePassives",
+						"09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientTransactionService",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ProyectoFinal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documentType\": \"DNI\",\r\n    \"documentNumber\": \"71440590\",\r\n    \"phoneNumber\": \"944453862\",\r\n    \"email\": \"alexis@gmail.com\",\r\n    \"balance\" : 100,\r\n    \"date\": \"2022-07-26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8007/bootcoin/62e06e1db9ac8c600bbf8128",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8007",
+					"path": [
+						"bootcoin",
+						"62e06e1db9ac8c600bbf8128"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BootcoinSend",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionNumber\": \"1\",\r\n    \"senderId\": \"944453862\",\r\n    \"receiverId\": \"956777827\",\r\n    \"amount\": 5.5,\r\n    \"paymentMethod\": \"YANKI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8007/bootcoin/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8007",
+					"path": [
+						"bootcoin",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
